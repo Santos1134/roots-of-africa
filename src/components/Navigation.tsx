@@ -79,7 +79,7 @@ export function Navigation() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isMobileMenuOpen ? 'z-[60] bg-cream py-3' : isScrolled ? 'z-50 bg-cream/95 backdrop-blur-sm shadow-sm py-3 md:py-4' : 'z-50 bg-transparent py-4 md:py-6'}`}
+        className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isMobileMenuOpen ? 'z-[60] bg-cream py-3' : isScrolled ? 'z-50 bg-cream shadow-md py-3 md:py-4' : 'z-50 bg-transparent py-4 md:py-6'}`}
         initial={{
           y: -100
         }}
@@ -102,7 +102,7 @@ export function Navigation() {
               className={`transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'h-[35px] md:h-[40px]' : 'h-[40px] md:h-[45px]'}`}
             />
             <span
-              className={`font-serif text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isScrolled || isMobileMenuOpen ? 'text-deep-brown' : 'text-white'}`}>
+              className={`font-serif text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isScrolled || isMobileMenuOpen ? 'text-deep-brown' : 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'}`}>
               Roots of Africa
             </span>
           </a>
@@ -113,7 +113,7 @@ export function Navigation() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href, link.isPage)}
-              className={`font-sans text-sm uppercase tracking-widest font-medium hover:text-terracotta transition-colors duration-300 ${isScrolled ? 'text-deep-brown' : 'text-white/90 hover:text-white'}`}>
+              className={`font-sans text-sm uppercase tracking-widest font-medium hover:text-terracotta transition-colors duration-300 ${isScrolled ? 'text-deep-brown' : 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] hover:text-white'}`}>
 
                 {link.name}
               </a>
@@ -129,7 +129,7 @@ export function Navigation() {
             <X className="w-6 h-6 text-deep-brown" /> :
 
             <Menu
-              className={`w-6 h-6 ${isScrolled ? 'text-deep-brown' : 'text-white'}`} />
+              className={`w-6 h-6 ${isScrolled ? 'text-deep-brown' : 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'}`} />
 
             }
           </button>
