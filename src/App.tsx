@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { SmallIntro } from './components/Intro';
 import { TourPackages } from './components/TourPackages';
 import { SmallQuotes } from './components/SmallQuotes';
-import { JourneyTimeline } from './components/JourneyTimeline';
 import { Photos } from './components/PhotoGallery';
 import { Booking } from './components/BookingSection';
 import { Footer } from './components/Footer';
@@ -22,7 +21,6 @@ function HomePage() {
         <SmallIntro />
         <TourPackages />
         <SmallQuotes />
-        <JourneyTimeline />
         <Photos />
         <Booking />
       </main>
