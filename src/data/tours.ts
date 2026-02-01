@@ -1,4 +1,4 @@
-import image2 from '../Assets/2.jpeg';
+import kpataweeImage from '../Assets/kpatawee.jpg';
 import image4 from '../Assets/4.jpeg';
 import image6 from '../Assets/6.jpeg';
 import image8 from '../Assets/8.jpeg';
@@ -30,7 +30,7 @@ export const tours: Tour[] = [
     location: 'Bong County',
     price: 455,
     shortDescription: 'A full day of nature, culture, and community.',
-    image: image2,
+    image: kpataweeImage,
     duration: 'Full Day (7 AM - 4 PM)',
     highlights: [
       'Visit one of Liberia\'s most breathtaking natural wonders',
