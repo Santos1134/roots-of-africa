@@ -96,7 +96,6 @@ ${message}`;
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                        placeholder="John Doe"
                         className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors"
                       />
                     </div>
@@ -109,7 +108,6 @@ ${message}`;
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        placeholder="john@example.com"
                         className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors"
                       />
                     </div>
@@ -124,7 +122,6 @@ ${message}`;
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+1 234 567 8900"
                         className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors"
                       />
                     </div>
@@ -158,7 +155,6 @@ ${message}`;
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       required
-                      placeholder="Tell us how we can help you..."
                       rows={5}
                       className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors resize-none"
                     />

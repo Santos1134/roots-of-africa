@@ -10,6 +10,7 @@ import { Booking } from './components/BookingSection';
 import { Footer } from './components/Footer';
 import { BookingPage } from './pages/BookingPage';
 import { ContactPage } from './pages/ContactPage';
+import { AboutPage } from './pages/AboutPage';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 function HomePage() {
   return (
@@ -35,6 +36,7 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/book" element={<BookingPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <FloatingWhatsApp />
     </BrowserRouter>);
