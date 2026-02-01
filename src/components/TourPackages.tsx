@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { tours } from '../data/tours';
 
@@ -58,9 +58,8 @@ export function TourPackages() {
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-terracotta font-sans text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                      See Details
-                      <ArrowRight className="w-4 h-4" />
+                    <span className="bg-terracotta text-white px-4 py-2 rounded-sm font-sans text-sm font-medium hover:bg-ochre transition-colors">
+                      Book
                     </span>
                   </div>
                 </div>
