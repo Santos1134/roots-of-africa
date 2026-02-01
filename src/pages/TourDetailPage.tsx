@@ -92,7 +92,6 @@ export function TourDetailPage() {
                   <span className="font-serif text-2xl md:text-3xl text-white">
                     ${tour.price}
                   </span>
-                  <span className="text-white/70 text-sm">per person</span>
                 </div>
               </motion.div>
             </div>
@@ -220,7 +219,6 @@ export function TourDetailPage() {
                   <div className="font-serif text-3xl text-deep-brown">
                     ${tour.price}
                   </div>
-                  <span className="font-sans text-warm-gray text-sm">per person</span>
                 </div>
 
                 <div className="space-y-4 mb-6">
@@ -258,10 +256,6 @@ export function TourDetailPage() {
                   </svg>
                   Ask a Question
                 </button>
-
-                <p className="text-xs text-warm-gray text-center mt-4">
-                  Free cancellation up to 24 hours before
-                </p>
               </motion.div>
             </div>
           </div>
