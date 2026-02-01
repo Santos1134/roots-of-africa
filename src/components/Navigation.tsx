@@ -40,12 +40,12 @@ export function Navigation() {
   },
   {
     name: 'About',
-    href: '/about',
+    href: '#/about',
     isPage: true
   },
   {
     name: 'Contact',
-    href: '/contact',
+    href: '#/contact',
     isPage: true
   },
   {
