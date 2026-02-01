@@ -4,13 +4,13 @@ import { Hero } from './components/Hero';
 import { SmallIntro } from './components/Intro';
 import { TourPackages } from './components/TourPackages';
 import { SmallQuotes } from './components/SmallQuotes';
-import { Photos } from './components/PhotoGallery';
 import { Booking } from './components/BookingSection';
 import { Footer } from './components/Footer';
 import { BookingPage } from './pages/BookingPage';
 import { ContactPage } from './pages/ContactPage';
 import { AboutPage } from './pages/AboutPage';
 import { TourDetailPage } from './pages/TourDetailPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 function HomePage() {
   return (
@@ -21,7 +21,6 @@ function HomePage() {
         <SmallIntro />
         <TourPackages />
         <SmallQuotes />
-        <Photos />
         <Booking />
       </main>
       <Footer />
@@ -36,6 +35,7 @@ export function App() {
         <Route path="/book" element={<BookingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/tour/:tourId" element={<TourDetailPage />} />
       </Routes>
       <FloatingWhatsApp />

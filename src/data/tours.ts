@@ -1,8 +1,8 @@
 import kpataweeImage from '../Assets/kpatawee.jpg';
 import image4 from '../Assets/4.jpeg';
 import image6 from '../Assets/6.jpeg';
-import image8 from '../Assets/8.jpeg';
 import image10 from '../Assets/10.jpeg';
+import image11 from '../Assets/11.jpeg';
 import image12 from '../Assets/12.jpeg';
 
 export interface Tour {
@@ -132,7 +132,7 @@ export const tours: Tour[] = [
     location: 'Monrovia',
     price: 350,
     shortDescription: 'History, culture, and urban exploration.',
-    image: image8,
+    image: image11,
     duration: 'Full Day',
     highlights: [
       'Visit Ducor Hotel ruins and learn about the civil war',

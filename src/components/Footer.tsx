@@ -4,8 +4,8 @@ import logo from '../Assets/logo.png';
 export function Footer() {
   return (
     <footer className="bg-cream border-t border-deep-brown/10 pt-10 md:pt-14 pb-8 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-10">
-        <div className="col-span-2 md:col-span-1">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-10">
+        <div>
           <a
             href="#"
             className="block mb-4">
@@ -58,62 +58,6 @@ export function Footer() {
               </svg>
             </a>
           </div>
-        </div>
-
-        <div>
-          <h4 className="font-sans text-xs uppercase tracking-widest text-deep-brown font-bold mb-4">
-            Destinations
-          </h4>
-          <ul className="space-y-2 font-sans text-warm-gray text-sm">
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Bong County
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Grand Cape Mount
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Monrovia
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Sierra Leone
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-sans text-xs uppercase tracking-widest text-deep-brown font-bold mb-4">
-            Experiences
-          </h4>
-          <ul className="space-y-2 font-sans text-warm-gray text-sm">
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Kpatawee Waterfall
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Lake Piso
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                Village Tours
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-terracotta transition-colors">
-                City Tours
-              </a>
-            </li>
-          </ul>
         </div>
 
         <div>

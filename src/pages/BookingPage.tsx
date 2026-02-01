@@ -25,22 +25,14 @@ export function BookingPage() {
     }
   }, [searchParams]);
   const [children, setChildren] = useState(0);
-  const [infants, setInfants] = useState(0);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [notes, setNotes] = useState('');
   const [showTourDropdown, setShowTourDropdown] = useState(false);
   const selectedTourData = tours.find((t) => t.id === selectedTour);
-  const totalGuests = adults + children + infants;
-  const basePrice = selectedTourData?.price || 0;
-  const childDiscount = 0.5; // 50% off for children
-  const infantPrice = 0; // Free for infants
-  const totalPrice = selectedTourData ?
-  basePrice * adults +
-  basePrice * childDiscount * children +
-  infantPrice * infants :
-  0;
+  const totalGuests = adults + children;
+  const totalPrice = selectedTourData?.price || 0;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedTour || !selectedDate || !name || !email) return;
@@ -54,7 +46,6 @@ export function BookingPage() {
     
     let guestDetails = `${adults} adult${adults > 1 ? 's' : ''}`;
     if (children > 0) guestDetails += `, ${children} child${children > 1 ? 'ren' : ''}`;
-    if (infants > 0) guestDetails += `, ${infants} infant${infants > 1 ? 's' : ''}`;
     
     const message = `*New Booking Request*
 
@@ -191,7 +182,7 @@ I would like to book this tour. Please confirm availability.`;
                               {tour.location}
                             </p>
                             <p className="font-sans text-terracotta text-sm font-medium">
-                              ${tour.price} per person
+                              ${tour.price}
                             </p>
                           </div>
                           {selectedTour === tour.id &&
@@ -276,7 +267,7 @@ I would like to book this tour. Please confirm availability.`;
                         Children
                       </p>
                       <p className="font-sans text-warm-gray text-sm">
-                        Ages 2-12 (50% off)
+                        Ages 2-12
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -305,39 +296,6 @@ I would like to book this tour. Please confirm availability.`;
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between py-3">
-                    <div>
-                      <p className="font-sans text-deep-brown font-medium">
-                        Infants
-                      </p>
-                      <p className="font-sans text-warm-gray text-sm">
-                        Under 2 (Free)
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setInfants(Math.max(0, infants - 1))}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-50"
-                        disabled={infants <= 0}
-                        title="Decrease number of infants"
-                        aria-label="Decrease number of infants">
-
-                        <Minus className="w-4 h-4" />
-                      </button>
-                      <span className="font-sans text-deep-brown w-8 text-center font-medium">
-                        {infants}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setInfants(infants + 1)}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors"
-                        title="Increase number of infants"
-                        aria-label="Increase number of infants">
-                        <Plus className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -459,36 +417,7 @@ I would like to book this tour. Please confirm availability.`;
                       </div>
                   }
 
-                    <div className="py-3 border-b border-deep-brown/10 space-y-1 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-warm-gray">
-                          {adults} × Adult{adults > 1 ? 's' : ''}
-                        </span>
-                        <span className="text-deep-brown">
-                          ${(basePrice * adults).toFixed(0)}
-                        </span>
-                      </div>
-                      {children > 0 &&
-                    <div className="flex justify-between">
-                          <span className="text-warm-gray">
-                            {children} × Child{children > 1 ? 'ren' : ''}
-                          </span>
-                          <span className="text-deep-brown">
-                            ${(basePrice * childDiscount * children).toFixed(0)}
-                          </span>
-                        </div>
-                    }
-                      {infants > 0 &&
-                    <div className="flex justify-between">
-                          <span className="text-warm-gray">
-                            {infants} × Infant{infants > 1 ? 's' : ''}
-                          </span>
-                          <span className="text-deep-brown">Free</span>
-                        </div>
-                    }
-                    </div>
-
-                    <div className="flex justify-between py-3 font-serif text-lg">
+                    <div className="flex justify-between py-3 border-t border-deep-brown/10 font-serif text-lg">
                       <span className="text-deep-brown">Total</span>
                       <span className="text-terracotta font-bold">
                         ${totalPrice.toFixed(0)}

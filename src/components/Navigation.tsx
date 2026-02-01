@@ -36,7 +36,8 @@ export function Navigation() {
   },
   {
     name: 'Gallery',
-    href: '#gallery'
+    href: '#/gallery',
+    isPage: true
   },
   {
     name: 'About',
