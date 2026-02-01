@@ -31,10 +31,6 @@ export function Navigation() {
     href: '#stories'
   },
   {
-    name: 'Experiences',
-    href: '#journeys'
-  },
-  {
     name: 'Gallery',
     href: '#/gallery',
     isPage: true
@@ -199,8 +195,9 @@ export function Navigation() {
               transition={{
                 delay: 0.4
               }}
-              className="flex gap-6 mt-10 pt-8 border-t border-deep-brown/10">
-
+              className="flex flex-col items-center gap-4 mt-10 pt-8 border-t border-deep-brown/10">
+                <span className="font-sans text-xs uppercase tracking-widest text-warm-gray">Follow Us</span>
+                <div className="flex gap-6">
                 <a
                 href="https://www.instagram.com/roots_of_africa_tours"
                 target="_blank"
@@ -241,6 +238,7 @@ export function Navigation() {
                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                   </svg>
                 </a>
+                </div>
               </motion.div>
             </div>
           </motion.div>
