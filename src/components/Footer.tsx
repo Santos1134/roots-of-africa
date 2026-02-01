@@ -91,7 +91,7 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto border-t border-deep-brown/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs font-sans text-warm-gray/60">
         <p>&copy; 2026 Roots of Africa Tours</p>
-        <p>Built by: The Devs <a href="https://wa.me/231776428126" target="_blank" rel="noopener noreferrer" className="hover:text-terracotta transition-colors">+231776428126</a></p>
+        <p>Built by: <a href="https://wa.me/231776428126" target="_blank" rel="noopener noreferrer" className="hover:text-terracotta transition-colors">The Devs</a></p>
       </div>
     </footer>);
 
