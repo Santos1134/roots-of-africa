@@ -14,7 +14,7 @@ export function TourPackages() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {tours.map((tour, index) => (
+          {[...tours].sort((a, b) => b.price - a.price).map((tour, index) => (
             <motion.div
               key={tour.id}
               initial={{ opacity: 0, y: 30 }}

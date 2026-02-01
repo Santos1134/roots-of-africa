@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { SmallIntro } from './components/Intro';
@@ -32,7 +32,7 @@ function HomePage() {
 }
 export function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/book" element={<BookingPage />} />
@@ -41,6 +41,6 @@ export function App() {
         <Route path="/tour/:tourId" element={<TourDetailPage />} />
       </Routes>
       <FloatingWhatsApp />
-    </BrowserRouter>);
+    </HashRouter>);
 
 }
