@@ -103,7 +103,7 @@ export function Navigation() {
             />
             <span
               className={`font-serif text-lg md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isScrolled || isMobileMenuOpen ? 'text-deep-brown' : 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'}`}>
-              Roots of Africa
+              Roots of Africa Tours
             </span>
           </a>
 

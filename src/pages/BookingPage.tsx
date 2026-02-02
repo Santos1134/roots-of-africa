@@ -121,7 +121,7 @@ I would like to book this tour. Please confirm availability.`;
                   <button
                     type="button"
                     onClick={() => setShowTourDropdown(!showTourDropdown)}
-                    className="w-full bg-cream border border-deep-brown/20 rounded-sm p-4 text-left flex items-center justify-between hover:border-terracotta transition-colors">
+                    className="w-full bg-cream border border-deep-brown/20 rounded-sm p-4 text-left flex items-center justify-between hover:border-terracotta transition-colors cursor-pointer">
 
                     {selectedTourData ?
                     <div className="flex items-center gap-3">
@@ -167,7 +167,7 @@ I would like to book this tour. Please confirm availability.`;
                         setSelectedTour(tour.id);
                         setShowTourDropdown(false);
                       }}
-                      className={`w-full p-4 flex items-center gap-3 hover:bg-cream transition-colors text-left border-b border-deep-brown/5 last:border-0 ${selectedTour === tour.id ? 'bg-cream' : ''}`}>
+                      className={`w-full p-4 flex items-center gap-3 hover:bg-cream transition-colors text-left border-b border-deep-brown/5 last:border-0 cursor-pointer ${selectedTour === tour.id ? 'bg-cream' : ''}`}>
 
                           <img
                         src={tour.image}
@@ -211,7 +211,7 @@ I would like to book this tour. Please confirm availability.`;
                     onChange={(e) => setSelectedDate(e.target.value)}
                     min={minDate}
                     required
-                    className="w-full bg-cream border border-deep-brown/20 rounded-sm p-4 pl-12 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors" />
+                    className="w-full bg-cream border border-deep-brown/20 rounded-sm p-4 pl-12 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors cursor-pointer" />
 
                 </div>
               </div>
@@ -238,7 +238,7 @@ I would like to book this tour. Please confirm availability.`;
                       <button
                         type="button"
                         onClick={() => setAdults(Math.max(1, adults - 1))}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-50"
+                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                         disabled={adults <= 1}
                         aria-label="Decrease number of adults"
                         title="Decrease number of adults">
@@ -251,7 +251,7 @@ I would like to book this tour. Please confirm availability.`;
                       <button
                         type="button"
                         onClick={() => setAdults(adults + 1)}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors"
+                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors cursor-pointer"
                         title="Increase number of adults"
                         aria-label="Increase number of adults">
                           
@@ -273,7 +273,7 @@ I would like to book this tour. Please confirm availability.`;
                       <button
                         type="button"
                         onClick={() => setChildren(Math.max(0, children - 1))}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-50"
+                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                         disabled={children <= 0}
                         aria-label="Decrease number of children"
                         title="Decrease number of children">
@@ -286,7 +286,7 @@ I would like to book this tour. Please confirm availability.`;
                       <button
                         type="button"
                         onClick={() => setChildren(children + 1)}
-                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors"
+                        className="w-8 h-8 rounded-full border border-deep-brown/20 flex items-center justify-center hover:border-terracotta hover:text-terracotta transition-colors cursor-pointer"
                         title="Increase number of children"
                         aria-label="Increase number of children">
 
