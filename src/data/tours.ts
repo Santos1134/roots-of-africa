@@ -5,6 +5,7 @@ import bomiImage from '../Assets/bomi.jpg';
 import monroviaImage from '../Assets/monrovia.jpg';
 import libassaImage from '../Assets/libassa.jpg';
 import freetownImage from '../Assets/freetown.jpg';
+import customImage from '../Assets/12.jpeg';
 
 export interface Tour {
   id: string;
@@ -343,6 +344,27 @@ export const tours: Tour[] = [
       'Meals and refreshments',
       'Beach activities',
       'Entrance fees'
+    ]
+  },
+  {
+    id: 'custom',
+    name: 'Personalize Your Own Tour',
+    location: 'Your Choice',
+    price: 0,
+    shortDescription: 'Design your own adventure with custom destinations and activities.',
+    image: customImage,
+    duration: 'Flexible',
+    highlights: [
+      'Choose your own destinations',
+      'Select activities you love',
+      'Flexible timing and duration',
+      'Personalized itinerary'
+    ],
+    itinerary: [],
+    included: [
+      'Custom itinerary planning',
+      'Professional local guide',
+      'Private transportation'
     ]
   }
 ];
