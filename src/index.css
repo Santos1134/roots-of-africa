@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light only;
   --color-cream: #FAF7F2;
   --color-warm-white: #FFFEF9;
   --color-deep-brown: #2C1810;
@@ -14,19 +15,6 @@
   --color-ochre: #D4A853;
   --color-sage: #7A8B6E;
   --color-tan: #E8DFD4;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-cream: #1A1210;
-    --color-warm-white: #231815;
-    --color-deep-brown: #FAF7F2;
-    --color-warm-gray: #B8A99A;
-    --color-terracotta: #D4886A;
-    --color-ochre: #E4B863;
-    --color-sage: #8FA082;
-    --color-tan: #3D3028;
-  }
 }
 
 @layer base {
