@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Users, Heart, Compass } from 'lucide-react';
 import aboutImage from '../Assets/5.jpeg';
-import founderImage from '../Assets/founder.jpg';
+import founderImage from '../Assets/found.jpg';
 
 export function AboutPage() {
   const goBack = () => {
