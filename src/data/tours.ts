@@ -2,7 +2,7 @@ import kpataweeImage from '../Assets/kpatawee.jpg';
 import gbaotaImage from '../Assets/gbaota.jpg';
 import lakepisoImage from '../Assets/lakepiso.jpg';
 import bomiImage from '../Assets/bomi.jpg';
-import image11 from '../Assets/11.jpeg';
+import monroviaImage from '../Assets/monrovia.jpg';
 import libassaImage from '../Assets/libassa.jpg';
 import freetownImage from '../Assets/freetown.jpg';
 
@@ -133,8 +133,8 @@ export const tours: Tour[] = [
     location: 'Monrovia',
     price: 80,
     shortDescription: 'History, culture, and urban exploration.',
-    image: image11,
-    duration: 'Full Day',
+    image: monroviaImage,
+    duration: '3-4 hours',
     highlights: [
       'Visit Ducor Hotel ruins and learn about the civil war',
       'See Capitol Hill and historical monuments',

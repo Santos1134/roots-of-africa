@@ -33,7 +33,7 @@ export function SmallQuotes() {
             "
           </span>
           <h2 className="font-display italic text-xl sm:text-2xl md:text-4xl lg:text-5xl leading-snug text-warm-white mb-6 md:mb-8">
-            To visit Liberia is to touch the roots of freedom, where the forest
+            To visit West Africa is to touch the roots of freedom, where the forest
             meets the sea.
           </h2>
           <div className="flex items-center justify-center gap-3">
