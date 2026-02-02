@@ -308,7 +308,7 @@ export const tours: Tour[] = [
     id: 'freetown',
     name: 'Freetown Day Tour',
     location: 'Freetown, Sierra Leone',
-    price: 80,
+    price: 100,
     shortDescription: 'History, wildlife, and beaches in Sierra Leone\'s capital.',
     image: image13,
     duration: 'Full Day (9 AM - 6 PM)',
