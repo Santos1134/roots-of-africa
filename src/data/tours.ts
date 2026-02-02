@@ -337,12 +337,12 @@ export const tours: Tour[] = [
     ],
     included: [
       'Professional local guide',
-      'Private transportation',
-      'Entrance fees'
+      'Private transportation'
     ],
     notIncluded: [
       'Meals and refreshments',
-      'Beach activities'
+      'Beach activities',
+      'Entrance fees'
     ]
   }
 ];
