@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Users, Heart, Compass } from 'lucide-react';
 import aboutImage from '../Assets/5.jpeg';
+import founderImage from '../Assets/founder.jpg';
 
 export function AboutPage() {
   const goBack = () => {
@@ -78,9 +79,79 @@ export function AboutPage() {
             </p>
 
             <p className="font-sans text-warm-gray leading-relaxed">
-              At Roots of Africa Tours, we are also committed to responsible tourism. We work closely with local communities, support small businesses, and encourage respectful cultural exchange that benefits both visitors and host communities. Our goal is not only to show Liberia to the world, but to ensure that tourism contributes positively to the country's growth and global image.
+              At Roots of Africa Tours, we are also committed to responsible tourism. We work closely with local communities, support small businesses and organizations (<a href="https://fourhunger.org" target="_blank" rel="noopener noreferrer" className="text-terracotta hover:text-ochre underline transition-colors">fourhunger.org</a>), and encourage respectful cultural exchange that benefits both visitors and host communities. Our goal is not only to show Liberia to the world, but to ensure that tourism contributes positively to the country's growth and global image.
             </p>
           </motion.div>
+        </section>
+
+        {/* Founder Section */}
+        <section className="bg-warm-gray/10 py-12 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-8"
+            >
+              <span className="font-sans text-terracotta uppercase tracking-widest text-xs md:text-sm">
+                Meet the Visionary
+              </span>
+              <h2 className="font-serif text-2xl md:text-4xl text-deep-brown mt-2">
+                About the Founder
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
+                <img
+                  src={founderImage}
+                  alt="Windell S. King - Founder of Roots of Africa Tours"
+                  className="w-full max-w-md mx-auto rounded-lg shadow-xl object-cover aspect-[4/5]"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-terracotta text-white px-6 py-3 rounded-sm hidden md:block">
+                  <p className="font-serif text-lg">Windell S. King</p>
+                  <p className="font-sans text-xs uppercase tracking-wider opacity-80">Founder & Lead Guide</p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-4"
+              >
+                <p className="font-sans text-warm-gray leading-relaxed">
+                  <span className="font-semibold text-deep-brown">Windell S. King</span> is a West African tourism professional, cultural storyteller, and founder of Roots of Africa Tours. Born and raised in Liberia, Windell has dedicated his work to reshaping how the world experiences West Africa through authentic encounters, community-led travel, and immersive storytelling.
+                </p>
+
+                <p className="font-sans text-warm-gray leading-relaxed">
+                  With years of experience guiding travelers, creators, and global explorers across Liberia and the region, Windell is known for designing tours that go beyond sightseeing. His approach centers on people, history, culture, and real connection — from coastal communities and historic landmarks to everyday life rarely seen by visitors.
+                </p>
+
+                <p className="font-sans text-warm-gray leading-relaxed">
+                  Windell has organized and led experiences for international travelers, YouTubers, media personalities, and cultural explorers, helping position Liberia and West Africa as destinations of depth, adventure, and warmth. His work is rooted in responsible tourism, local empowerment, and pride in African heritage.
+                </p>
+
+                <div className="bg-cream p-4 rounded-lg border-l-4 border-terracotta">
+                  <p className="font-sans text-sm text-warm-gray italic">
+                    <span className="font-semibold not-italic">Notable guests guided:</span> IShowSpeed, Drew Binsky, Traveltomtom, I Roam Alone, Kristijan Ilicic, Dos Loco De Viaje, Jason Wang, Wanderreds, Chris - Authentic Travelling, Wander Expedition, Cameron Mofid (youngest person to visit every country as of 2025), and 200+ others.
+                  </p>
+                </div>
+
+                <p className="font-sans text-warm-gray leading-relaxed">
+                  Through Roots of Africa Tours, Windell invites the world to experience West Africa not as outsiders, but as welcomed guests — discovering the region's beauty, resilience, and untold stories, one journey at a time.
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </section>
 
         <section className="bg-deep-brown py-12 md:py-16">
