@@ -94,8 +94,8 @@ export function Hero() {
           }}
           className="font-display text-lg sm:text-xl md:text-2xl text-white/90 italic max-w-2xl mb-8 md:mb-10">
 
-          Discover Liberia's hidden treasures, from the rushing waters of
-          Kpatawee to the vibrant streets of Monrovia.
+          Discover West Africa's hidden treasures, from cascading waterfalls
+          to vibrant cities and pristine beaches.
         </motion.p>
 
         <motion.button
