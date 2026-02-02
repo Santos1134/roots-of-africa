@@ -4,6 +4,7 @@ import image6 from '../Assets/6.jpeg';
 import image10 from '../Assets/10.jpeg';
 import image11 from '../Assets/11.jpeg';
 import image12 from '../Assets/12.jpeg';
+import image13 from '../Assets/13.jpeg';
 
 export interface Tour {
   id: string;
@@ -128,9 +129,9 @@ export const tours: Tour[] = [
   },
   {
     id: 'monrovia',
-    name: 'Monrovia City & Culture Tour',
+    name: 'Monrovia City Tour',
     location: 'Monrovia',
-    price: 350,
+    price: 80,
     shortDescription: 'History, culture, and urban exploration.',
     image: image11,
     duration: 'Full Day',
@@ -301,6 +302,47 @@ export const tours: Tour[] = [
       'Hotel pickup and drop-off',
       'Professional local guide',
       'Private transportation'
+    ]
+  },
+  {
+    id: 'freetown',
+    name: 'Freetown Day Tour',
+    location: 'Freetown, Sierra Leone',
+    price: 80,
+    shortDescription: 'History, wildlife, and beaches in Sierra Leone\'s capital.',
+    image: image13,
+    duration: 'Full Day (9 AM - 6 PM)',
+    highlights: [
+      'Explore Central Freetown and the iconic Cotton Tree',
+      'Visit the National Museum and Railway Museum',
+      'Meet chimpanzees at Tacugama Sanctuary',
+      'Relax at River Number 2 Beach'
+    ],
+    itinerary: [
+      {
+        time: '9:00 AM - 11:00 AM',
+        title: 'Central Freetown (PZ)',
+        description: 'Explore the heart of Freetown. Visit the National Museum to learn about Sierra Leone\'s rich history, see the historic St John\'s Maroon Church, stand beneath the famous Cotton Tree, and browse the vibrant PZ Street market.'
+      },
+      {
+        time: '12:00 PM - 2:00 PM',
+        title: 'Old Fourah Bay College & Railway Museum',
+        description: 'Visit the historic Old Fourah Bay College, the first Western-style university in West Africa. Continue to the Railway Museum to discover Sierra Leone\'s colonial railway history and pick up postcards and souvenirs.'
+      },
+      {
+        time: '2:00 PM - 6:00 PM',
+        title: 'Tacugama & River Number 2 Beach',
+        description: 'Head to Tacugama Chimpanzee Sanctuary to observe rescued chimpanzees in their natural habitat. End the day relaxing at the stunning River Number 2 Beach, one of West Africa\'s most beautiful beaches.'
+      }
+    ],
+    included: [
+      'Professional local guide',
+      'Private transportation',
+      'Entrance fees'
+    ],
+    notIncluded: [
+      'Meals and refreshments',
+      'Beach activities'
     ]
   }
 ];

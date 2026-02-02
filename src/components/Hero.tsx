@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroImage from '../Assets/8.jpeg';
 
 export function Hero() {
@@ -119,36 +119,6 @@ export function Hero() {
         </motion.button>
       </motion.div>
 
-      <motion.div
-        initial={{
-          opacity: 0
-        }}
-        animate={{
-          opacity: 1
-        }}
-        transition={{
-          delay: 1,
-          duration: 1
-        }}
-        className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 text-white/80 flex flex-col items-center gap-2 cursor-pointer"
-        onClick={scrollToStories}>
-
-        <span className="text-[10px] md:text-xs uppercase tracking-widest font-sans">
-          Scroll Down
-        </span>
-        <motion.div
-          animate={{
-            y: [0, 8, 0]
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 1.5,
-            ease: 'easeInOut'
-          }}>
-
-          <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
-        </motion.div>
-      </motion.div>
     </div>);
 
 }

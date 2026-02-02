@@ -30,13 +30,13 @@ const stories = [
 },
 {
   id: 3,
-  title: 'Monrovia City & Culture',
+  title: 'Monrovia City Tour',
   subtitle: 'Full Day Experience',
   description:
   'A fast-paced, immersive journey through history. From the ruins of the Ducor Hotel to the bustling Waterside Market.',
   image: image8,
   quote: 'History here is written in every street corner.',
-  price: 'Custom',
+  price: '$80',
   align: 'left'
 },
 {

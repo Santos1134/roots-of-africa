@@ -27,9 +27,9 @@ export function SmallIntro() {
 
           <div className="md:col-span-5 relative">
                         <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-deep-brown leading-tight mb-4 md:mb-6">
-              Welcome to the{' '}
-              <span className="italic text-warm-gray">Grain Coast</span>,
-              Africa's oldest republic.
+              Welcome to{' '}
+              <span className="italic text-warm-gray">West Africa</span>,
+              where every journey tells a story.
             </h2>
             <div className="w-12 md:w-20 h-1 bg-terracotta mb-4 md:mb-6" />
 
@@ -44,20 +44,20 @@ export function SmallIntro() {
 
           <div className="md:col-span-7 md:pl-6 space-y-4 md:space-y-5 text-sm sm:text-base md:text-lg text-warm-gray leading-relaxed font-sans font-light">
             <p className="first-letter:text-4xl md:first-letter:text-5xl first-letter:font-serif first-letter:text-terracotta first-letter:float-left first-letter:mr-2 first-letter:leading-none">
-              Liberia is a land of untold stories. From the dense rainforests of
-              Bong County to the historic shores of Providence Island, this is a
-              country where history lives in the soil and culture flows like the
+              West Africa is a land of untold stories. From the dense rainforests
+              and cascading waterfalls to historic coastal shores, this is a
+              region where history lives in the soil and culture flows like the
               rivers. At Roots of Africa Tours, we guide you beyond the surface
-              to experience the authentic heartbeat of the nation.
+              to experience the authentic heartbeat of the continent.
             </p>
             <p>
               Our journeys are immersive and personal. We believe in connecting
-              you with the people—the fishermen of West Point, the farmers near
-              Kpatawee, and the elders who keep our traditions alive.
+              you with the people—the fishermen, the farmers, and the elders
+              who keep our traditions alive across West Africa.
             </p>
             <p className="hidden sm:block">
               We don't just offer tours; we offer a bridge to understanding.
-              Experience the warmth of Liberian hospitality, the rhythm of
+              Experience the warmth of West African hospitality, the rhythm of
               traditional dance, and the breathtaking natural wonders that
               remain untouched by mass tourism.
             </p>

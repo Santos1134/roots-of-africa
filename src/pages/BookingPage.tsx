@@ -32,7 +32,7 @@ export function BookingPage() {
   const [showTourDropdown, setShowTourDropdown] = useState(false);
   const selectedTourData = tours.find((t) => t.id === selectedTour);
   const totalGuests = adults + children;
-  const totalPrice = selectedTourData?.price || 0;
+  const totalPrice = (selectedTourData?.price || 0) * totalGuests;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedTour || !selectedDate || !name || !email) return;
