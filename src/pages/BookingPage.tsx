@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Calendar,
@@ -8,7 +8,9 @@ import {
   ArrowLeft,
   Check,
   Minus,
-  Plus } from
+  Plus,
+  MapPin,
+  Activity } from
 'lucide-react';
 import { tours } from '../data/tours';
 
@@ -30,24 +32,52 @@ export function BookingPage() {
   const [phone, setPhone] = useState('');
   const [notes, setNotes] = useState('');
   const [showTourDropdown, setShowTourDropdown] = useState(false);
+  const [customDestinations, setCustomDestinations] = useState('');
+  const [customActivities, setCustomActivities] = useState('');
+  const isCustomTour = selectedTour === 'custom';
   const selectedTourData = tours.find((t) => t.id === selectedTour);
   const totalGuests = adults + children;
   const totalPrice = (selectedTourData?.price || 0) * totalGuests;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedTour || !selectedDate || !name || !email) return;
-    
+    if (isCustomTour && (!customDestinations || !customActivities)) return;
+
     const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
-    
+
     let guestDetails = `${adults} adult${adults > 1 ? 's' : ''}`;
     if (children > 0) guestDetails += `, ${children} child${children > 1 ? 'ren' : ''}`;
-    
-    const message = `*New Booking Request*
+
+    let message: string;
+
+    if (isCustomTour) {
+      message = `*Custom Tour Request*
+
+*Type:* Personalized Tour
+*Date:* ${formattedDate}
+*Guests:* ${guestDetails}
+
+*Destinations I'd like to visit:*
+${customDestinations}
+
+*Activities I'd like to do:*
+${customActivities}
+
+*Contact Details:*
+• Name: ${name}
+• Email: ${email}
+• Phone: ${phone || 'Not provided'}
+
+${notes ? `*Additional Notes:*\n${notes}` : ''}
+
+I would like to create a personalized tour. Please contact me with a quote and available options.`;
+    } else {
+      message = `*New Booking Request*
 
 *Tour:* ${selectedTourData?.name}
 *Location:* ${selectedTourData?.location}
@@ -64,10 +94,11 @@ export function BookingPage() {
 ${notes ? `*Special Requests:*\n${notes}` : ''}
 
 I would like to book this tour. Please confirm availability.`;
+    }
 
     const whatsappNumber = '231888351388';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
+
     window.open(whatsappUrl, '_blank');
   };
   const goBack = () => {
@@ -89,9 +120,9 @@ I would like to book this tour. Please confirm availability.`;
             <ArrowLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Back</span>
           </button>
-          <a href="/" className="font-serif text-xl md:text-2xl font-bold">
-            Roots of Africa
-          </a>
+          <Link to="/" className="font-serif text-xl md:text-2xl font-bold">
+            Roots of Africa Tours
+          </Link>
           <div className="w-16" />
         </div>
       </header>
@@ -126,10 +157,10 @@ I would like to book this tour. Please confirm availability.`;
                     {selectedTourData ?
                     <div className="flex items-center gap-3">
                         <img
-                        src={selectedTourData.image}
-                        alt=""
-                        className="w-12 h-12 object-cover rounded-sm" />
-
+                          src={selectedTourData.image}
+                          alt=""
+                          className="w-12 h-12 object-cover rounded-sm"
+                        />
                         <div>
                           <p className="font-sans text-deep-brown font-medium">
                             {selectedTourData.name}
@@ -170,9 +201,10 @@ I would like to book this tour. Please confirm availability.`;
                       className={`w-full p-4 flex items-center gap-3 hover:bg-cream transition-colors text-left border-b border-deep-brown/5 last:border-0 cursor-pointer ${selectedTour === tour.id ? 'bg-cream' : ''}`}>
 
                           <img
-                        src={tour.image}
-                        alt=""
-                        className="w-14 h-14 object-cover rounded-sm flex-shrink-0" />
+                            src={tour.image}
+                            alt=""
+                            className="w-14 h-14 object-cover rounded-sm flex-shrink-0"
+                          />
 
                           <div className="flex-1 min-w-0">
                             <p className="font-sans text-deep-brown font-medium truncate">
@@ -182,7 +214,7 @@ I would like to book this tour. Please confirm availability.`;
                               {tour.location}
                             </p>
                             <p className="font-sans text-terracotta text-sm font-medium">
-                              ${tour.price}/person
+                              {tour.id === 'custom' ? 'Price on request' : `$${tour.price}/person`}
                             </p>
                           </div>
                           {selectedTour === tour.id &&
@@ -195,10 +227,56 @@ I would like to book this tour. Please confirm availability.`;
                 </div>
               </div>
 
+              {isCustomTour && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white rounded-sm p-5 md:p-6 border border-deep-brown/10"
+                >
+                  <h3 className="font-serif text-lg text-deep-brown mb-4 flex items-center gap-2">
+                    <span className="w-6 h-6 bg-terracotta text-cream rounded-full flex items-center justify-center text-sm">
+                      2
+                    </span>
+                    Design Your Adventure
+                  </h3>
+                  <p className="font-sans text-warm-gray text-sm mb-4">
+                    Tell us where you'd like to go and what you'd like to do. We'll create a personalized itinerary just for you.
+                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="font-sans text-sm text-warm-gray mb-1 flex items-center gap-2">
+                        <MapPin className="w-4 h-4" />
+                        Destinations you'd like to visit *
+                      </label>
+                      <textarea
+                        value={customDestinations}
+                        onChange={(e) => setCustomDestinations(e.target.value)}
+                        rows={3}
+                        required
+                        className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors resize-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-sans text-sm text-warm-gray mb-1 flex items-center gap-2">
+                        <Activity className="w-4 h-4" />
+                        Activities you'd like to do *
+                      </label>
+                      <textarea
+                        value={customActivities}
+                        onChange={(e) => setCustomActivities(e.target.value)}
+                        rows={3}
+                        required
+                        className="w-full bg-cream border border-deep-brown/20 rounded-sm p-3 font-sans text-deep-brown focus:outline-none focus:border-terracotta transition-colors resize-none"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
               <div className="bg-white rounded-sm p-5 md:p-6 border border-deep-brown/10">
                 <h3 className="font-serif text-lg text-deep-brown mb-4 flex items-center gap-2">
                   <span className="w-6 h-6 bg-terracotta text-cream rounded-full flex items-center justify-center text-sm">
-                    2
+                    {isCustomTour ? '3' : '2'}
                   </span>
                   Choose Your Date
                 </h3>
@@ -219,7 +297,7 @@ I would like to book this tour. Please confirm availability.`;
               <div className="bg-white rounded-sm p-5 md:p-6 border border-deep-brown/10">
                 <h3 className="font-serif text-lg text-deep-brown mb-4 flex items-center gap-2">
                   <span className="w-6 h-6 bg-terracotta text-cream rounded-full flex items-center justify-center text-sm">
-                    3
+                    {isCustomTour ? '4' : '3'}
                   </span>
                   Number of Guests
                 </h3>
@@ -301,7 +379,7 @@ I would like to book this tour. Please confirm availability.`;
               <div className="bg-white rounded-sm p-5 md:p-6 border border-deep-brown/10">
                 <h3 className="font-serif text-lg text-deep-brown mb-4 flex items-center gap-2">
                   <span className="w-6 h-6 bg-terracotta text-cream rounded-full flex items-center justify-center text-sm">
-                    4
+                    {isCustomTour ? '5' : '4'}
                   </span>
                   Your Details
                 </h3>
@@ -361,10 +439,10 @@ I would like to book this tour. Please confirm availability.`;
               <div className="lg:hidden">
                 <button
                   type="submit"
-                  disabled={!selectedTour || !selectedDate || !name || !email}
+                  disabled={!selectedTour || !selectedDate || !name || !email || (isCustomTour && (!customDestinations || !customActivities))}
                   className="w-full bg-terracotta text-cream py-4 font-sans uppercase tracking-widest text-sm hover:bg-ochre transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
 
-                  Request Booking
+                  {isCustomTour ? 'Request Price' : 'Request Booking'}
                 </button>
               </div>
             </form>
@@ -376,9 +454,10 @@ I would like to book this tour. Please confirm availability.`;
               <>
                   <div className="aspect-[16/9] relative">
                     <img
-                    src={selectedTourData.image}
-                    alt={selectedTourData.name}
-                    className="w-full h-full object-cover" />
+                      src={selectedTourData.image}
+                      alt={selectedTourData.name}
+                      className="w-full h-full object-cover"
+                    />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -386,58 +465,90 @@ I would like to book this tour. Please confirm availability.`;
                         {selectedTourData.name}
                       </h3>
                       <p className="font-sans text-sm text-white/80">
-                        {selectedTourData.location}
+                        {isCustomTour ? 'Design your own adventure' : selectedTourData.location}
                       </p>
                     </div>
                   </div>
                   <div className="p-5">
                     <h4 className="font-sans text-xs uppercase tracking-widest text-warm-gray mb-3">
-                      Booking Summary
+                      {isCustomTour ? 'Custom Tour Request' : 'Booking Summary'}
                     </h4>
-                    <div className="flex justify-between items-center mb-2 text-sm">
-                      <span className="text-warm-gray">Price per person</span>
-                      <span className="text-deep-brown font-medium">${selectedTourData?.price || 0}</span>
-                    </div>
-                    <div className="flex justify-between items-center mb-2 text-sm">
-                      <span className="text-warm-gray">Guests</span>
-                      <span className="text-deep-brown font-medium">{totalGuests}</span>
-                    </div>
+                    {isCustomTour ? (
+                      <>
+                        <div className="flex justify-between items-center mb-2 text-sm">
+                          <span className="text-warm-gray">Guests</span>
+                          <span className="text-deep-brown font-medium">{totalGuests}</span>
+                        </div>
+                        {selectedDate && (
+                          <div className="flex justify-between py-2 border-b border-deep-brown/10 text-sm">
+                            <span className="text-warm-gray">Date</span>
+                            <span className="text-deep-brown font-medium">
+                              {new Date(selectedDate).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
+                              })}
+                            </span>
+                          </div>
+                        )}
+                        <div className="py-3 border-t border-deep-brown/10">
+                          <p className="text-terracotta font-serif text-lg font-bold">
+                            Price on request
+                          </p>
+                          <p className="text-warm-gray text-xs mt-1">
+                            We'll provide a price based on your preferences
+                          </p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex justify-between items-center mb-2 text-sm">
+                          <span className="text-warm-gray">Price per person</span>
+                          <span className="text-deep-brown font-medium">${selectedTourData?.price || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center mb-2 text-sm">
+                          <span className="text-warm-gray">Guests</span>
+                          <span className="text-deep-brown font-medium">{totalGuests}</span>
+                        </div>
 
-                    {selectedDate &&
-                  <div className="flex justify-between py-2 border-b border-deep-brown/10 text-sm">
-                        <span className="text-warm-gray">Date</span>
-                        <span className="text-deep-brown font-medium">
-                          {new Date(selectedDate).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric'
-                      })}
-                        </span>
-                      </div>
-                  }
+                        {selectedDate && (
+                          <div className="flex justify-between py-2 border-b border-deep-brown/10 text-sm">
+                            <span className="text-warm-gray">Date</span>
+                            <span className="text-deep-brown font-medium">
+                              {new Date(selectedDate).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
+                              })}
+                            </span>
+                          </div>
+                        )}
 
-                    <div className="flex justify-between py-3 border-t border-deep-brown/10 font-serif text-lg">
-                      <span className="text-deep-brown">Total</span>
-                      <span className="text-terracotta font-bold">
-                        ${totalPrice.toFixed(0)}
-                      </span>
-                    </div>
+                        <div className="flex justify-between py-3 border-t border-deep-brown/10 font-serif text-lg">
+                          <span className="text-deep-brown">Total</span>
+                          <span className="text-terracotta font-bold">
+                            ${totalPrice.toFixed(0)}
+                          </span>
+                        </div>
+                      </>
+                    )}
 
                     <button
-                    type="submit"
-                    form="booking-form"
-                    onClick={handleSubmit}
-                    disabled={
-                    !selectedTour || !selectedDate || !name || !email
-                    }
-                    className="hidden lg:block w-full bg-terracotta text-cream py-3 font-sans uppercase tracking-widest text-sm hover:bg-ochre transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-2">
-
-                      Request Booking
+                      type="submit"
+                      form="booking-form"
+                      onClick={handleSubmit}
+                      disabled={
+                        !selectedTour || !selectedDate || !name || !email || (isCustomTour && (!customDestinations || !customActivities))
+                      }
+                      className="hidden lg:block w-full bg-terracotta text-cream py-3 font-sans uppercase tracking-widest text-sm hover:bg-ochre transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+                    >
+                      {isCustomTour ? 'Request Price' : 'Request Booking'}
                     </button>
 
                     <p className="text-xs text-warm-gray text-center mt-3">
-                      You won't be charged yet. We'll confirm availability
-                      first.
+                      {isCustomTour
+                        ? "We'll contact you with a personalized price."
+                        : "You won't be charged yet. We'll confirm availability first."}
                     </p>
                   </div>
                 </> :

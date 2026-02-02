@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -53,9 +53,9 @@ export function TourDetailPage() {
             <ArrowLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Back</span>
           </button>
-          <a href="/" className="font-serif text-xl md:text-2xl font-bold">
-            Roots of Africa
-          </a>
+          <Link to="/" className="font-serif text-xl md:text-2xl font-bold">
+            Roots of Africa Tours
+          </Link>
           <div className="w-16" />
         </div>
       </header>

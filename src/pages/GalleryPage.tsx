@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import image1 from '../Assets/1.jpeg';
 import image2 from '../Assets/2.jpeg';
 import image3 from '../Assets/3.jpeg';
@@ -126,9 +127,9 @@ export function GalleryPage() {
             <ArrowLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Back</span>
           </button>
-          <a href="/" className="font-serif text-xl md:text-2xl font-bold">
-            Roots of Africa
-          </a>
+          <Link to="/" className="font-serif text-xl md:text-2xl font-bold">
+            Roots of Africa Tours
+          </Link>
           <div className="w-16" />
         </div>
       </header>
