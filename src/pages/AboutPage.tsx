@@ -70,7 +70,7 @@ export function AboutPage() {
             </p>
 
             <p className="font-sans text-warm-gray leading-relaxed mb-6">
-              Founded on the belief that travel should educate, inspire, and create meaningful connections, Roots of Africa Tours offers curated tours across Monrovia and beyond, including heritage sites, cultural communities, natural landmarks, and historical locations that define Liberia's story. From iconic landmarks such as Providence Island and Ducor Hill to rural villages, waterfalls, beaches, and national parks, our experiences are designed to be authentic, insightful, and memorable.
+              Founded on the belief that travel should educate, inspire, and create meaningful connections, Roots of Africa Tours offers curated tours across Monrovia, Freetown, Abidjan and beyond the region, including heritage sites, cultural communities, natural landmarks, and historical locations that define Liberia's story. From iconic landmarks such as Providence Island and Ducor Hill to rural villages, waterfalls, beaches, and national parks, our experiences are designed to be authentic, insightful, and memorable.
             </p>
 
             <p className="font-sans text-warm-gray leading-relaxed mb-6">
@@ -98,7 +98,7 @@ export function AboutPage() {
                 </div>
                 <h3 className="font-serif text-lg text-cream mb-2">Local Expertise</h3>
                 <p className="font-sans text-cream/70 text-sm">
-                  Deep knowledge of Liberia's history, traditions, and hidden gems
+                  Deep knowledge of West Africa history, traditions, and hidden gems
                 </p>
               </motion.div>
 
