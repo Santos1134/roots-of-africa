@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Users, Heart, Compass } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import aboutImage from '../Assets/5.jpeg';
 import founderImage from '../Assets/found.jpg';
 
@@ -237,12 +238,12 @@ export function AboutPage() {
             <p className="font-display text-xl md:text-2xl text-terracotta italic mb-8">
               Travel with purpose. Travel with Roots of Africa Tours.
             </p>
-            <a
-              href="/book"
+            <Link
+              to="/book"
               className="inline-block bg-terracotta text-white px-8 py-4 font-sans uppercase tracking-widest text-sm hover:bg-ochre transition-colors rounded-sm"
             >
               Book Your Tour
-            </a>
+            </Link>
           </motion.div>
         </section>
       </main>
