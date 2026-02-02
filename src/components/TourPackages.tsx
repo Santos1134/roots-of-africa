@@ -45,7 +45,7 @@ export function TourPackages() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />
-                      {tour.duration}
+                      {tour.duration.split('(')[0].trim()}
                     </span>
                   </div>
 
